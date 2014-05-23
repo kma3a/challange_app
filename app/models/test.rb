@@ -1,7 +1,7 @@
 class Test < ActiveRecord::Base
-	belomgs_to :creator, class_name: "User"
-	have_many :solutions
-	have_many :users, through: :solutions
-	have_many :votes, as: :voteable
-	have_many :comments, as: :commentable
+	belongs_to :creator, class_name: "User"
+	has_many :solutions
+	has_many :users, through: :solutions
+	has_many :votes, as: :voteable
+	has_many :comments, as: :commentable
 end

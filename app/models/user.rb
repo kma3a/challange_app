@@ -1,10 +1,10 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
-  have_many :tests
-  have_many :solutions
-  have_many :solved_tests, through: :solutions, source: :tests
-  have_many :votes
-  have_many :comments
+  has_many :tests
+  has_many :solutions
+  has_many :solved_tests, through: :solutions, source: :tests
+  has_many :votes
+  has_many :comments
 
 
   devise :database_authenticatable, :registerable,
