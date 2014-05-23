@@ -13,6 +13,14 @@
 
 ActiveRecord::Schema.define(version: 20140523190132) do
 
+  create_table "chals", force: true do |t|
+    t.integer  "creator_id"
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "comments", force: true do |t|
     t.integer  "author_id"
     t.integer  "commentable_id"
@@ -24,15 +32,7 @@ ActiveRecord::Schema.define(version: 20140523190132) do
 
   create_table "solutions", force: true do |t|
     t.integer  "user_id"
-    t.integer  "test_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "tests", force: true do |t|
-    t.integer  "creator_id"
-    t.string   "name"
-    t.text     "description"
+    t.integer  "chal_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
