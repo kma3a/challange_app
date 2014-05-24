@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+
   # Include default devise modules. Others available are:
   has_many :chals, foreign_key: "creator_id"
   has_many :solutions
