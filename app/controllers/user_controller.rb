@@ -1,5 +1,4 @@
-class UserController < ApplicationController
-  before_action :authenticate_user!
-  def index
-  end
+class UsersController < ApplicationController
+  before_action :user_signed_in?, only: [:hidden]
+
 end
