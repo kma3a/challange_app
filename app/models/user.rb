@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   has_many :votes
   has_many :comments, foreign_key: "author_id"
 
+  before_action :authenticate_user!
+
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
