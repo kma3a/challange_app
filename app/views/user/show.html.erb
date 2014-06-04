@@ -11,5 +11,8 @@
 <div> 
 	<h3>Completed challenges:</h3>
 	<ul>
+		<% @user.solved_tests.each do |challenge| %>
+		<li><%= challenge.name %></li>
+		<% end%>
 	</ul>
 </div>
