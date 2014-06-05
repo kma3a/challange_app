@@ -1,0 +1,4 @@
+class ChalController < ApplicationController
+  
+
+end
