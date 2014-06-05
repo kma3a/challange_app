@@ -27,7 +27,13 @@ class ChalsController < ApplicationController
 	end
 
 	def update
-
+		@chal = Chal.find(params[:id])
+		@chal.update!(name: chal_params[:name], description: chal_params[:description])
+		if @chal.save
+			redirect_to @chal
+		else
+			render 'edit'
+		end
 	end
 
 	def destroy
