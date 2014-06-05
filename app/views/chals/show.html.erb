@@ -5,3 +5,8 @@
 	<p><%= @chal.description%></p>
 
 </div>
+
+<% if @chal.creator_id == current_user.id %>
+	<%= link_to "delete challenge", chal_path(@chal), method: :delete %>
+	<%= link_to "edit challenge", edit_chal_path(@chal) %>
+<% end %>
