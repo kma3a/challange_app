@@ -1,11 +1,12 @@
 class ChalsController < ApplicationController
 
 	def index
+		@chals = Chal.all
 
 	end
 
 	def create
-		@chal = Chal.new(creator_id: current_user.id ,name: chal_params[:name], description: chal_params[:description])
+		@chal = Chal.create!(creator_id: current_user.id ,name: chal_params[:name], description: chal_params[:description])
 		if @chal
 			redirect_to @chal
 		else
