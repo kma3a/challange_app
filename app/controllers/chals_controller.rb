@@ -5,7 +5,7 @@ class ChalsController < ApplicationController
 	end
 
 	def create
-		@chal = Chal.new(creator_id: current_user.id ,name: params[:name], description: params[:description])
+		@chal = Chal.new(creator_id: current_user.id ,name: chal_params[:name], description: chal_params[:description])
 		if @chal
 			redirect_to @chal
 		else
@@ -31,6 +31,12 @@ class ChalsController < ApplicationController
 
 	def destroy
 
+	end
+
+	private
+
+	def chal_params
+		params.require(:chal).permit(:name, :description)
 	end
 
 
