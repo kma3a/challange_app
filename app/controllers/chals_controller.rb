@@ -5,8 +5,12 @@ class ChalsController < ApplicationController
 	end
 
 	def create
-		p params
-
+		@chal = Chal.new(creator_id: current_user.id ,name: params[:name], description: params[:description])
+		if @chal
+			redirect_to @chal
+		else
+			render 'new'
+		end
 	end
 
 	def new
