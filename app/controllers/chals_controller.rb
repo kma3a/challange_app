@@ -5,6 +5,8 @@ class ChalsController < ApplicationController
 	end
 
 	def create
+		p params
+		@chal = Chal.create!(name:params)
 
 	end
 
