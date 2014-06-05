@@ -37,7 +37,10 @@ class ChalsController < ApplicationController
 	end
 
 	def destroy
+		@chal = Chal.find(params[:id])
+		@chal.destroy
 
+		redirect_to user_path(current_user)
 	end
 
 	private
