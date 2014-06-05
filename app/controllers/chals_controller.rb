@@ -19,7 +19,7 @@ class ChalsController < ApplicationController
 	end
 
 	def edit
-
+		@chal = Chal.find(params[:id])
 	end
 
 	def show
