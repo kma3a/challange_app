@@ -1,0 +1,9 @@
+<div>
+	<ul>
+		<% @chals.each do |chal| %>
+		<li><%= link_to chal.name, chal_path(chal)%></li>
+		<% end %>
+	</ul>
+
+
+</div>
